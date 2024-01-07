@@ -1,3 +1,160 @@
-h1 {
-  color: red;
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  Remove list styles (bullets/numbers)
+  in case you use it with normalize.css
+*/
+ol, ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* Removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+body {
+  background-image: linear-gradient(teal, purple);
+  background-repeat: no-repeat;
+  height: auto;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 10px;
+  padding: 0 40px;
+}
+
+a {
+  cursor: pointer;
+}
+
+header {
+  padding: 0 40px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-container h1 {
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 2px 3px 3px black;
+  padding: 10px 10px;
+}
+.header-container a span {
+  padding: 10px 10px;
+}
+
+.material-symbols-outlined {
+  font-size: 3.5rem;
+  color: black;
+}
+
+.material-symbols-outlined:hover {
+  color: purple;
+  cursor: pointer;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.main-nav div {
+  margin: 5px;
+  width: calc(100vw - 100px);
+  box-shadow: 3px 3px 3px;
+  border-radius: 10px;
+}
+.main-nav .content:hover {
+  box-shadow: 5px 5px 5px black inset;
+  translate: 3px 3px;
+}
+.main-nav h2 {
+  font-size: 2rem;
+  padding: 10px;
+  color: white;
+  text-shadow: 2px 3px 3px black;
+  border: 0.1px solid black;
+  border-radius: 10px;
+}
+
+.main-nav div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.main-nav .heading {
+  margin-top: 35px;
+  background-color: rgba(75, 60, 100, 0.5);
+}
+
+.main-nav .heading h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.heading h2:hover {
+  cursor: default;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.001), purple);
+}
+
+.copy-footer {
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 800px) {
+  .header-container h1 {
+    font-size: 5rem;
+  }
+  main {
+    padding: 0 50px;
+  }
+  header {
+    padding: 0 50px;
+  }
+  .main-nav h2 {
+    font-size: 4rem;
+  }
+  .material-symbols-outlined {
+    font-size: 5rem;
+  }
 }

@@ -1,3 +1,11 @@
-h1{
-  color: red;
+@import "css/reset";
+@import "css/basics";
+@import "css/header";
+@import "css/main";
+@import "css/footer";
+
+
+
+@media screen and (min-width: 800px){
+  @import "css/desktop";
 }
