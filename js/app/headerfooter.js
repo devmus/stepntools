@@ -10,7 +10,26 @@ const createHeaderContent = () => {
   createLink.href = '/index.html';
   createToolsIcon.classList.add('material-symbols-outlined');
   createToolsIcon.textContent = 'handyman';
-  heading1.textContent = title;
+  if (title !== 'StepN Tools') {
+    heading1.textContent = 'StepN Tools > ' + title;
+  } else {
+    heading1.textContent = title;
+  }
+
+  const updateHeadingSize = () => {
+    heading1.removeAttribute('style');
+    const headingDefaultSize = parseFloat(
+      getComputedStyle(heading1)
+        .getPropertyValue('font-size')
+        .match(/[\d\.]+/)[0]
+    );
+    const headingAdjustMultiplier =
+      (100 - heading1.textContent.length * 2) / 100;
+    const headingNewSize = headingDefaultSize * headingAdjustMultiplier;
+    heading1.style.fontSize = `${headingNewSize}px`;
+  };
+  updateHeadingSize();
+  window.addEventListener('resize', updateHeadingSize);
 };
 
 const createFooterContent = () => {

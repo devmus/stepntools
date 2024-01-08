@@ -1,9 +1,7 @@
-import { initHeaderFooter } from './js/headerfooter.js';
-import { createMainContent } from './js/maincontent.js';
+import { initHeaderFooter } from './js/app/headerfooter.js';
 
 const init = () => {
   initHeaderFooter();
-  createMainContent();
 };
 
-init();
+export { init };
